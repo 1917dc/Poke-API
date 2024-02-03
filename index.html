@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" href='img/pokeball.png'>
+
+    <title>PokeAPI</title>
+
+    <style>
+        body{
+            font-family: "Roboto Mono";
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="wrapper">
+            <h1 class="title">PokeAPI</h1>
+            <form class="form">
+                <input type="search" placeholder="Name/Number" required class="inputPokemon">
+            </form>
+            <container style="display: inline;">
+                <img src="#" alt="Pokemon" class="imgPokemon">
+                <div>
+                <p class="namePokemon classPokemon"></p>
+                <p class="numberPokemon classPokemon"></p>
+                <p class="typePokemon classPokemon"></p>
+                </div>
+            </container>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
