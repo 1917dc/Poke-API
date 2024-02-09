@@ -1,18 +1,27 @@
+body{
+    background-color: #121318;
+}
+
 .title{
     text-align: center;
+    color: white;
 }
 
 .imgPokemon{
     display: block;
     margin: auto;
     text-align: center;
+    color: white;
+    align-items: center;
+    max-height: 100px;
+    max-width: 100px;
 }
 
 .namePokemon{
-    
+    color: white;
 }
 .numberPokemon{
-    
+    color: white;
 }
 
 .inputPokemon{
@@ -21,7 +30,9 @@
     margin: auto;
 }
 .typePokemon{
-    
+    color: white;
+    width: 10%;
+    margin: auto;
 }
 
 .wrapper{

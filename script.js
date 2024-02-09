@@ -5,7 +5,28 @@ const imgPokemon = document.querySelector(".imgPokemon")
 const inputPokemon = document.querySelector(".inputPokemon")
 const form = document.querySelector('.form')
 
-function capitalizeString(string){
+let colorTypes = {
+    fire: 'DE4B37',
+    water: '3D8DDD',
+    electric: 'E6C53D',
+    ghost: '9D5CDD',
+    fighting: 'CD681A',
+    steel: 'C6C6C6',
+    ground: 'B5803D',
+    poison: '72009C',
+    dragon: '1CA4AD',
+    grass: '64CF33',
+    normal: 'CC6000',
+    bug: '4A9800',
+    flying: '2D98CE',
+    psychic: 'AD1A78',
+    rock: '7C2400',
+    ice: '60B9BF',
+    dark: '212F40',
+    fairy: 'B100A1'
+}
+
+function stringCap(string){
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
@@ -15,7 +36,7 @@ function toLowerString(string){
 }
 
 const fetchPokemon = async pokemon => {
-    const responseAPI = await fetch(`https://pokeapi.co/api/v2/pokemon/${inputPokemon.value}`)
+    const responseAPI = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
 
     const data = await responseAPI.json();
     return data;
@@ -23,36 +44,35 @@ const fetchPokemon = async pokemon => {
 
 const renderPokemon = async pokemon => {
     const data = await fetchPokemon(pokemon);
-    
     const sizeType = data['types'].length
-
-    console.log('Pokemon', data.name, 'has', sizeType, 'types')
+    console.log('Pokemon', stringCap(data.name), 'has', sizeType, 'types')
     
-    let type = [];
+    let types = [];
     for(let i = 0; i < sizeType; i++){
-        type.push(data.types[i].type.name)
-        console.log(type)
+        types.push(data.types[i].type.name)
+        console.log(types)
     }
 
-    namePokemon.innerHTML = `Pokemon: ${capitalizeString(data.name)}`;
+    namePokemon.innerHTML = `Pokemon: ${stringCap(data.name)}`;
     numberPokemon.innerHTML = `Pokemon n°: ${data.id}`;
     imgPokemon.src = data.sprites.front_default
-    for(let i = 0; i < type.length; i++){
-        typePokemon.innerHTML += (`<br>${capitalizeString(type[i])}</br>`)
-    }
+    types.forEach(type =>{
+        typePokemon.innerHTML += (`<p style="background-color: #${colorTypes[type]};">${stringCap(type)}</p>`)
+        console.log(colorTypes[type])
+    })
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('Ok');
-})
 
 form.addEventListener('submit', event =>{
     console.log('Event submitted')
-    const pokemon = inputPokemon.value
-    console.log(pokemon.type)
+    const pokemon = inputPokemon.value.toLowerCase()
 
     renderPokemon(pokemon)
     form.reset()
     typePokemon.innerHTML = ''
     event.preventDefault();
 })
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Ok');
+})
+
