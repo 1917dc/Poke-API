@@ -12,28 +12,33 @@
     <link href="style.css" rel="stylesheet">
     <link rel="icon" href='img/pokeball.png'>
 
-    <title>Poke API</title>
-
-    <style>
-        body{
-            font-family: "Roboto Mono";
-        }
-    </style>
+    <title>Poké API</title>
 </head>
 
 <body>
     <main>
         <div class="wrapper">
-            <h1 class="title">Poké API</h1>
+            <div class="boxTitle">
+                <h1 class="title">Poké API</h1>
+                <img src="img/pikachu.svg" style="display: block; align-items: center; margin: auto;">
+            </div>
             <form class="form">
-                <input type="search" placeholder="Name/Number" required class="inputPokemon">
+                <input style="border-radius: 5px; border: none; height: 30px;" type="search" placeholder="Name/Number" required class="inputPokemon">
             </form>
-            <container style="display: inline;">
-                <img src="img/question_mark.gif" alt="?" class="imgPokemon" onerror="hideImg()">
+            <container style="display: inline; padding: 5px;">
+                <img src="img/question_mark.gif" class="imgPokemon">
                 <div>
-                <p class="namePokemon classPokemon"></p>
-                <p class="numberPokemon classPokemon"></p>
-                <p class="typePokemon classPokemon"></p>
+                    <div class="name">
+                        <img src="img/pokeball.svg" style="width: 20px; align-items: center; display: block; margin: auto; padding-right: 10px;">
+                        <p class="namePokemon classPokemon"></p>
+                    </div>
+                    <div class="number">
+                        <img src="img/number.svg" style="width: 20px; align-items: center; display: block; margin: auto; padding-right: 10px;">
+                        <p class="numberPokemon classPokemon"></p>
+                    </div>
+                    <div class="type">
+                        <p class="typePokemon classPokemon"></p>
+                    </div>
                 </div>
             </container>
         </div>

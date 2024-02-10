@@ -8,7 +8,7 @@ const form = document.querySelector('.form')
 let colorTypes = {
     fire: 'DE4B37',
     water: '3D8DDD',
-    electric: 'E6C53D',
+    electric: 'CAB250',
     ghost: '9D5CDD',
     fighting: 'CD681A',
     steel: 'C6C6C6',
@@ -57,8 +57,7 @@ const renderPokemon = async pokemon => {
     numberPokemon.innerHTML = `${data.id}`;
     imgPokemon.src = data.sprites.front_default
     types.forEach(type =>{
-        typePokemon.innerHTML += (`<p style="background-color: #${colorTypes[type]};">${stringCap(type)}</p>`)
-        console.log(colorTypes[type])
+        typePokemon.innerHTML += (`<p style="background-color: #${colorTypes[type]}; padding: 5px; border-radius: 5px">${stringCap(type)}</p>`)
     })
 }
 

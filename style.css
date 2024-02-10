@@ -1,5 +1,6 @@
 body{
     background-color: #121318;
+    font-family: "Roboto Mono";
 }
 
 .title{
@@ -42,4 +43,26 @@ body{
 
 .classPokemon{
     text-align: center;
+}
+
+.boxTitle{
+    display: flex;
+    width: 25%;
+    margin-left: 40%;
+}
+
+.name{
+    margin: auto;
+    display: flex;
+    width: fit-content;
+}
+
+.number{
+    margin: auto;
+    display: flex;
+    width: fit-content;
+}
+
+.input{
+
 }
