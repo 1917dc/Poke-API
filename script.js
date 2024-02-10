@@ -53,8 +53,8 @@ const renderPokemon = async pokemon => {
         console.log(types)
     }
 
-    namePokemon.innerHTML = `Pokemon: ${stringCap(data.name)}`;
-    numberPokemon.innerHTML = `Pokemon n°: ${data.id}`;
+    namePokemon.innerHTML = `${stringCap(data.name)}`;
+    numberPokemon.innerHTML = `${data.id}`;
     imgPokemon.src = data.sprites.front_default
     types.forEach(type =>{
         typePokemon.innerHTML += (`<p style="background-color: #${colorTypes[type]};">${stringCap(type)}</p>`)
